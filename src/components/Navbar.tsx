@@ -26,20 +26,20 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-xl text-white border-b border-slate-800/70 shadow-2xl">
       {/* Official Factory Hotline Top Bar */}
-      <div className="bg-slate-950/90 text-slate-300 text-[11px] px-4 py-1.5 font-semibold border-b border-slate-800/80 backdrop-blur-md">
+      <div className="bg-slate-950 text-slate-300 text-[11px] px-4 py-1.5 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1 bg-red-950/60 text-red-300 border border-red-800/60 font-extrabold px-2.5 py-0.5 rounded-full text-[10px] uppercase tracking-wider backdrop-blur-xs">
-              <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+            <span className="inline-flex items-center gap-1 bg-red-950/40 text-red-400 font-semibold px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">
+              <ShieldCheck className="w-3.5 h-3.5 text-red-500" />
               100% Genuine Roto Moulders
             </span>
-            <span className="text-slate-300 hidden sm:inline text-[11px] font-medium">
+            <span className="text-slate-400 hidden sm:inline text-[11px]">
               Official Factory Direct Sales & Countrywide Depot Delivery
             </span>
           </div>
           <div className="flex items-center gap-4 text-[11px]">
-            <a href="tel:+254710492539" className="hover:text-amber-400 transition-colors flex items-center gap-1.5 font-extrabold text-amber-400">
-              <PhoneCall className="w-3.5 h-3.5 text-amber-400" />
+            <a href="tel:+254710492539" className="hover:text-white transition-colors flex items-center gap-1.5 font-medium text-amber-400">
+              <PhoneCall className="w-3.5 h-3.5" />
               <span>Sales Hotline: +254 710 492 539</span>
             </a>
           </div>
@@ -56,8 +56,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => setActiveTab('catalog')}
           >
             <img 
-              src="/src/assets/images/roto_logo_placeholder_1785153576543.jpg" 
-              alt="Roto Tanks Logo" 
+              src="https://placehold.co/150x150/dc2626/ffffff?text=ROTO+LOGO" 
+              alt="Roto Tanks Logo Placeholder" 
               className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl object-cover border border-red-600/60 shadow-lg group-hover:scale-105 transition-transform"
               referrerPolicy="no-referrer"
             />
@@ -101,13 +101,13 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={() => setActiveTab('ai-advisor')}
-              className={`flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer backdrop-blur-md ${
+              className={`flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                 activeTab === 'ai-advisor'
-                  ? 'bg-amber-400 text-slate-950 font-extrabold shadow-lg shadow-amber-400/20'
-                  : 'bg-slate-900/60 text-amber-400 hover:bg-slate-900 border border-slate-800/80'
+                  ? 'bg-slate-800 text-white border-slate-700'
+                  : 'bg-slate-900/40 text-slate-300 hover:bg-slate-800 border border-transparent'
               }`}
             >
-              <Sparkles className="w-4 h-4 text-amber-400 fill-amber-400" />
+              <Sparkles className="w-4 h-4 text-amber-400" />
               <span className="hidden sm:inline">AI Tank Calculator</span>
               <span className="sm:hidden">AI Advisor</span>
             </button>
@@ -142,60 +142,60 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
 
-        {/* Navigation Bar Pills with Frosted Glass styling & Clean Icons */}
-        <nav className="flex items-center gap-2 sm:gap-3 overflow-x-auto py-2.5 border-t border-slate-800/70 text-xs font-bold scrollbar-none flex-nowrap scroll-smooth">
+        {/* Navigation Bar Pills */}
+        <nav className="flex items-center gap-2 sm:gap-3 overflow-x-auto py-2.5 border-t border-slate-800/70 text-xs font-semibold scrollbar-none flex-nowrap scroll-smooth">
           <button
             onClick={() => setActiveTab('catalog')}
-            className={`shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 backdrop-blur-md ${
-              activeTab === 'catalog' ? 'bg-red-600 text-white font-extrabold shadow-lg shadow-red-600/30' : 'text-slate-300 hover:text-white hover:bg-slate-900/80 border border-slate-800/50'
+            className={`shrink-0 px-3.5 sm:px-4 py-2 rounded-lg whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
+              activeTab === 'catalog' ? 'bg-red-600 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800'
             }`}
           >
-            <ShoppingBag className="w-3.5 h-3.5 text-amber-400" />
+            <ShoppingBag className="w-3.5 h-3.5" />
             <span>Product Catalog</span>
           </button>
           <button
             onClick={() => setActiveTab('ai-advisor')}
-            className={`shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 backdrop-blur-md ${
-              activeTab === 'ai-advisor' ? 'bg-red-600 text-white font-extrabold shadow-lg shadow-red-600/30' : 'text-slate-300 hover:text-white hover:bg-slate-900/80 border border-slate-800/50'
+            className={`shrink-0 px-3.5 sm:px-4 py-2 rounded-lg whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
+              activeTab === 'ai-advisor' ? 'bg-slate-800 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800'
             }`}
           >
-            <Calculator className="w-3.5 h-3.5 text-amber-400" />
+            <Calculator className="w-3.5 h-3.5" />
             <span>AI Calculator</span>
           </button>
           <button
             onClick={() => setActiveTab('custom-moulding')}
-            className={`shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 backdrop-blur-md ${
-              activeTab === 'custom-moulding' ? 'bg-red-600 text-white font-extrabold shadow-lg shadow-red-600/30' : 'text-slate-300 hover:text-white hover:bg-slate-900/80 border border-slate-800/50'
+            className={`shrink-0 px-3.5 sm:px-4 py-2 rounded-lg whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
+              activeTab === 'custom-moulding' ? 'bg-slate-800 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800'
             }`}
           >
-            <Factory className="w-3.5 h-3.5 text-amber-400" />
+            <Factory className="w-3.5 h-3.5" />
             <span>Custom Moulding</span>
           </button>
           <button
             onClick={() => setActiveTab('dealer-locator')}
-            className={`shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 backdrop-blur-md ${
-              activeTab === 'dealer-locator' ? 'bg-red-600 text-white font-extrabold shadow-lg shadow-red-600/30' : 'text-slate-300 hover:text-white hover:bg-slate-900/80 border border-slate-800/50'
+            className={`shrink-0 px-3.5 sm:px-4 py-2 rounded-lg whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
+              activeTab === 'dealer-locator' ? 'bg-slate-800 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800'
             }`}
           >
-            <MapPin className="w-3.5 h-3.5 text-amber-400" />
+            <MapPin className="w-3.5 h-3.5" />
             <span>Factory Depots</span>
           </button>
           <button
             onClick={() => setActiveTab('warranty')}
-            className={`shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 backdrop-blur-md ${
-              activeTab === 'warranty' ? 'bg-red-600 text-white font-extrabold shadow-lg shadow-red-600/30' : 'text-slate-300 hover:text-white hover:bg-slate-900/80 border border-slate-800/50'
+            className={`shrink-0 px-3.5 sm:px-4 py-2 rounded-lg whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
+              activeTab === 'warranty' ? 'bg-slate-800 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800'
             }`}
           >
-            <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+            <ShieldCheck className="w-3.5 h-3.5" />
             <span>Warranty Lookup</span>
           </button>
           <button
             onClick={() => setActiveTab('domain-hub')}
-            className={`shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 backdrop-blur-md ${
-              activeTab === 'domain-hub' ? 'bg-slate-800 text-white font-extrabold border border-slate-700 shadow-md' : 'text-slate-300 hover:text-white hover:bg-slate-900/80 border border-slate-800/50'
+            className={`shrink-0 px-3.5 sm:px-4 py-2 rounded-lg whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
+              activeTab === 'domain-hub' ? 'bg-slate-800 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800'
             }`}
           >
-            <Globe className="w-3.5 h-3.5 text-slate-400" />
+            <Globe className="w-3.5 h-3.5" />
             <span>Domain & System</span>
           </button>
         </nav>

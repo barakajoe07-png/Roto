@@ -79,8 +79,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateTab }) => {
               onClick={() => onNavigateTab('catalog')}
             >
               <img 
-                src="/src/assets/images/roto_logo_placeholder_1785153576543.jpg" 
-                alt="Roto Tanks Logo" 
+                src="https://placehold.co/150x150/dc2626/ffffff?text=ROTO+LOGO" 
+                alt="Roto Tanks Logo Placeholder" 
                 className="w-10 h-10 rounded-xl object-cover border border-red-600/60 shadow-md group-hover:scale-105 transition-transform"
                 referrerPolicy="no-referrer"
               />

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { RFQItem } from '../types';
-import { X, Trash2, CheckCircle, FileText, ShoppingBag, Send, MapPin, Download, Printer, Compass, MessageCircle, FileCode } from 'lucide-react';
+import { X, Trash2, CheckCircle, FileText, ShoppingBag, Send, MapPin, Download, Printer, Compass, MessageCircle, FileCode, Factory } from 'lucide-react';
 import { KENYA_COUNTIES } from '../data/kenyaCounties';
 import { CustomSelect } from './CustomSelect';
 import { downloadPDFQuote, downloadTXTQuote, openWhatsAppQuote, autoDownloadAndShareQuote, CustomerQuoteInfo } from '../utils/quoteHelpers';
@@ -180,19 +180,19 @@ export const RFQCartModal: React.FC<RFQCartModalProps> = ({
       <div className="bg-slate-900 text-slate-100 rounded-2xl max-w-3xl w-full shadow-2xl border border-slate-800 overflow-hidden my-4 sm:my-8 flex flex-col max-h-[92vh]">
         
         {/* Sleek Header */}
-        <div className="px-5 py-4 bg-slate-950/90 text-white flex items-center justify-between shrink-0 border-b border-slate-800/80">
+        <div className="px-5 py-4 bg-slate-950 text-white flex items-center justify-between shrink-0 border-b border-slate-800">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-red-600/90 rounded-xl flex items-center justify-center text-white shadow-xs">
+            <div className="w-9 h-9 bg-slate-900 rounded-lg flex items-center justify-center border border-slate-800 text-slate-300">
               <ShoppingBag className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="text-sm sm:text-base font-bold text-white tracking-tight">Sales Quotation Request</h2>
-              <p className="text-xs text-slate-400 font-normal">{rfqItems.length} Product{rfqItems.length !== 1 ? 's' : ''} Selected • <span className="text-slate-200 font-semibold">KSh {subtotalKsh.toLocaleString()}</span></p>
+              <h2 className="text-sm font-semibold text-white tracking-tight">Sales Quotation Request</h2>
+              <p className="text-xs text-slate-400 font-normal">{rfqItems.length} Product{rfqItems.length !== 1 ? 's' : ''} Selected • <span className="text-slate-300">KSh {subtotalKsh.toLocaleString()}</span></p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-lg bg-slate-800/60 hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer"
+            className="w-8 h-8 rounded-lg hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
@@ -327,30 +327,30 @@ export const RFQCartModal: React.FC<RFQCartModalProps> = ({
                     <button
                       type="button"
                       onClick={() => handleDownloadPDF()}
-                      className="px-2.5 py-1 bg-slate-800/80 hover:bg-slate-700 text-slate-300 text-xs font-medium rounded-md border border-slate-700/80 flex items-center gap-1 transition-colors cursor-pointer"
+                      className="px-2.5 py-1 hover:bg-slate-800 text-slate-400 hover:text-white text-xs font-medium rounded-md border border-slate-800 flex items-center gap-1.5 transition-colors cursor-pointer"
                       title="Download PDF"
                     >
-                      <Download className="w-3 h-3 text-red-400" />
+                      <Download className="w-3 h-3" />
                       <span>.PDF</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={() => handleDownloadTXT()}
-                      className="px-2.5 py-1 bg-slate-800/80 hover:bg-slate-700 text-slate-300 text-xs font-medium rounded-md border border-slate-700/80 flex items-center gap-1 transition-colors cursor-pointer"
+                      className="px-2.5 py-1 hover:bg-slate-800 text-slate-400 hover:text-white text-xs font-medium rounded-md border border-slate-800 flex items-center gap-1.5 transition-colors cursor-pointer"
                       title="Download .TXT"
                     >
-                      <FileCode className="w-3 h-3 text-amber-400" />
+                      <FileCode className="w-3 h-3" />
                       <span>.TXT</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={() => handleOpenWhatsApp()}
-                      className="px-2.5 py-1 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 text-xs font-medium rounded-md border border-emerald-500/30 flex items-center gap-1 transition-colors cursor-pointer"
+                      className="px-2.5 py-1 hover:bg-slate-800 text-slate-400 hover:text-white text-xs font-medium rounded-md border border-slate-800 flex items-center gap-1.5 transition-colors cursor-pointer"
                       title="Share via WhatsApp"
                     >
-                      <MessageCircle className="w-3 h-3 text-emerald-400" />
+                      <MessageCircle className="w-3 h-3" />
                       <span>WhatsApp</span>
                     </button>
 
@@ -358,7 +358,7 @@ export const RFQCartModal: React.FC<RFQCartModalProps> = ({
                       <button
                         type="button"
                         onClick={() => setShowClearConfirm(true)}
-                        className="text-xs text-slate-400 hover:text-red-400 font-medium px-2 py-1 rounded-md hover:bg-slate-800 transition-colors cursor-pointer flex items-center gap-1"
+                        className="text-xs text-slate-500 hover:text-red-400 font-medium px-2 py-1 rounded-md hover:bg-slate-800 transition-colors cursor-pointer flex items-center gap-1.5"
                       >
                         <Trash2 className="w-3 h-3" />
                         <span>Clear</span>
@@ -423,21 +423,21 @@ export const RFQCartModal: React.FC<RFQCartModalProps> = ({
                         <div className="flex items-center border border-slate-800 rounded-lg bg-slate-900 overflow-hidden text-xs">
                           <button
                             onClick={() => onUpdateQuantity(item.product.id, -1)}
-                            className="px-2 py-0.5 text-slate-400 hover:text-white hover:bg-slate-800 font-bold transition-colors cursor-pointer"
+                            className="px-2.5 py-1 text-slate-400 hover:text-white hover:bg-slate-800 font-medium transition-colors cursor-pointer"
                           >
                             -
                           </button>
-                          <span className="px-2.5 py-0.5 font-bold text-slate-200">{item.quantity}</span>
+                          <span className="px-3 py-1 font-medium text-slate-200">{item.quantity}</span>
                           <button
                             onClick={() => onUpdateQuantity(item.product.id, 1)}
-                            className="px-2 py-0.5 text-slate-400 hover:text-white hover:bg-slate-800 font-bold transition-colors cursor-pointer"
+                            className="px-2.5 py-1 text-slate-400 hover:text-white hover:bg-slate-800 font-medium transition-colors cursor-pointer"
                           >
                             +
                           </button>
                         </div>
 
                         <div className="text-right min-w-[80px]">
-                          <p className="text-xs font-bold text-slate-100 font-mono">
+                          <p className="text-xs font-medium text-slate-200 font-mono">
                             KSh {(item.product.priceKsh * item.quantity).toLocaleString()}
                           </p>
                           <p className="text-[10px] text-slate-500 font-mono">KSh {item.product.priceKsh.toLocaleString()} ea</p>
@@ -445,7 +445,7 @@ export const RFQCartModal: React.FC<RFQCartModalProps> = ({
 
                         <button
                           onClick={() => onRemoveItem(item.product.id)}
-                          className="text-slate-500 hover:text-red-400 p-1 transition-colors cursor-pointer"
+                          className="text-slate-600 hover:text-red-400 p-1.5 transition-colors cursor-pointer"
                           title="Remove item"
                         >
                           <X className="w-3.5 h-3.5" />
@@ -458,13 +458,13 @@ export const RFQCartModal: React.FC<RFQCartModalProps> = ({
               </div>
 
               {/* Customer Contact & Delivery Form */}
-              <form onSubmit={handleSubmitQuote} className="bg-slate-950/60 p-4 sm:p-5 rounded-xl border border-slate-800 space-y-4 text-white">
-                <div className="flex items-center justify-between border-b border-slate-800/80 pb-2.5">
-                  <h3 className="text-xs font-semibold text-slate-200 uppercase tracking-wider flex items-center gap-2">
-                    <FileText className="w-3.5 h-3.5 text-red-500" />
-                    <span>Customer & Delivery Specification</span>
+              <form onSubmit={handleSubmitQuote} className="bg-slate-900/50 p-4 sm:p-5 rounded-xl border border-slate-800 space-y-5 text-white">
+                <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                  <h3 className="text-xs font-semibold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                    <FileText className="w-4 h-4 text-slate-500" />
+                    <span>Customer & Delivery Details</span>
                   </h3>
-                  <span className="text-[10px] text-slate-400 font-normal">
+                  <span className="text-[10px] text-slate-500 font-normal">
                     Official Proforma Estimate
                   </span>
                 </div>
@@ -553,32 +553,34 @@ export const RFQCartModal: React.FC<RFQCartModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setDeliveryMode('depot-delivery')}
-                      className={`p-2.5 rounded-lg border text-left font-medium transition-all cursor-pointer ${
+                      className={`p-3 rounded-lg border text-left font-medium transition-all cursor-pointer ${
                         deliveryMode === 'depot-delivery'
-                          ? 'bg-red-950/40 text-white border-red-600/80 shadow-xs'
-                          : 'bg-slate-900 text-slate-400 border-slate-800 hover:bg-slate-800/60'
+                          ? 'bg-slate-800 text-white border-slate-700'
+                          : 'bg-slate-900/50 text-slate-400 border-slate-800 hover:bg-slate-800'
                       }`}
                     >
-                      <div className="flex items-center gap-1.5 font-semibold text-slate-200">
-                        <span>🚛 Regional Depot Delivery</span>
+                      <div className="flex items-center gap-2 font-semibold text-slate-200 mb-0.5">
+                        <MapPin className="w-3.5 h-3.5" />
+                        <span>Regional Depot Delivery</span>
                       </div>
-                      <span className="block text-[11px] text-slate-400 font-normal mt-0.5">
+                      <span className="block text-[11px] text-slate-500 font-normal">
                         Delivered to nearest Roto branch in {selectedCounty}
                       </span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setDeliveryMode('factory-pickup')}
-                      className={`p-2.5 rounded-lg border text-left font-medium transition-all cursor-pointer ${
+                      className={`p-3 rounded-lg border text-left font-medium transition-all cursor-pointer ${
                         deliveryMode === 'factory-pickup'
-                          ? 'bg-red-950/40 text-white border-red-600/80 shadow-xs'
-                          : 'bg-slate-900 text-slate-400 border-slate-800 hover:bg-slate-800/60'
+                          ? 'bg-slate-800 text-white border-slate-700'
+                          : 'bg-slate-900/50 text-slate-400 border-slate-800 hover:bg-slate-800'
                       }`}
                     >
-                      <div className="flex items-center gap-1.5 font-semibold text-slate-200">
-                        <span>🏢 Direct Factory Pick-up</span>
+                      <div className="flex items-center gap-2 font-semibold text-slate-200 mb-0.5">
+                        <Factory className="w-3.5 h-3.5" />
+                        <span>Direct Factory Pick-up</span>
                       </div>
-                      <span className="block text-[11px] text-slate-400 font-normal mt-0.5">
+                      <span className="block text-[11px] text-slate-500 font-normal">
                         Collect directly at Roto Factory Off Enterprise Rd, Nairobi
                       </span>
                     </button>
@@ -597,10 +599,10 @@ export const RFQCartModal: React.FC<RFQCartModalProps> = ({
                 </div>
 
                 {/* Subtotal Display & Submit */}
-                <div className="pt-3 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div className="pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div>
-                    <span className="text-[11px] text-slate-400 font-normal">Total Payable (16% VAT Incl):</span>
-                    <p className="text-xl font-bold text-amber-400 font-mono">
+                    <span className="text-[11px] text-slate-500 font-normal">Total Payable (16% VAT Incl):</span>
+                    <p className="text-xl font-semibold text-white font-mono">
                       KSh {subtotalKsh.toLocaleString()}
                     </p>
                   </div>
@@ -609,35 +611,34 @@ export const RFQCartModal: React.FC<RFQCartModalProps> = ({
                     <button
                       type="button"
                       onClick={() => handleDownloadPDF()}
-                      className="px-3 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs rounded-lg transition-colors flex items-center justify-center gap-1 cursor-pointer border border-slate-700/80"
+                      className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-xs rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer border border-slate-700"
                       title="Download PDF"
                     >
-                      <Download className="w-3.5 h-3.5 text-red-400" />
+                      <Download className="w-3.5 h-3.5" />
                       <span>PDF</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={() => handleDownloadTXT()}
-                      className="px-3 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs rounded-lg transition-colors flex items-center justify-center gap-1 cursor-pointer border border-slate-700/80"
+                      className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-xs rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer border border-slate-700"
                       title="Download TXT"
                     >
-                      <FileCode className="w-3.5 h-3.5 text-amber-400" />
+                      <FileCode className="w-3.5 h-3.5" />
                       <span>TXT</span>
                     </button>
 
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="flex-1 sm:flex-initial px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white font-semibold text-xs rounded-lg shadow-sm transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
+                      className="flex-1 sm:flex-initial px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold text-xs rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         <span>Processing...</span>
                       ) : (
                         <>
-                          <MessageCircle className="w-3.5 h-3.5 text-white" />
+                          <MessageCircle className="w-3.5 h-3.5" />
                           <span>Submit Quote & WhatsApp</span>
-                          <Send className="w-3 h-3 text-amber-300" />
                         </>
                       )}
                     </button>
