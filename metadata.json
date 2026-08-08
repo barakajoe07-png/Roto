@@ -1,0 +1,6 @@
+{
+  "name": "Rotomoulders East Africa",
+  "description": "Official web platform and portal for Rotomoulders - manufacturer of heavy-duty Roto Tanks, septic systems, chemical storage, agricultural products, and custom rotational moulding.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
